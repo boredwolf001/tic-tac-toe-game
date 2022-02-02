@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cell-grid {
+  width: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.cell {
+  margin: 0.5px;
+  cursor: pointer;
+  border: 1px #333 solid;
+  aspect-ratio: 1 / 1;
+  padding: 5px;
+}
+
+.cell.cell-x {
+  background-image: url(./img/x.svg);
+}
+
+.cell.cell-o {
+  background-image: url(./img/o.svg);
+}
