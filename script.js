@@ -38,11 +38,13 @@ function checkWin() {
     if (allEqual([cells[i][0], cells[i][1], cells[i][2]])) {
       alert(cells[i][0] + ' won')
       location.reload()
+      break
     }
 
     if (allEqual([cells[0][i], cells[1][i], cells[2][i]])) {
       alert(cells[0][i] + ' won')
       location.reload()
+      break
     }
   }
 
@@ -50,11 +52,13 @@ function checkWin() {
   if (allEqual([cells[0][0], cells[1][1], cells[2][2]])) {
     alert(cells[0][0] + ' won')
     location.reload()
+    return
   }
 
-  if (allEqual([cells[2][2], cells[1][1], cells[0][0]])) {
-    alert(cells[2][2] + ' won')
+  if (allEqual([cells[0][2], cells[1][1], cells[2][0]])) {
+    alert(cells[0][2] + ' won')
     location.reload()
+    return
   }
 
   // draw
@@ -63,6 +67,16 @@ function checkWin() {
     location.reload()
   }
 }
+
+/*
+STRUCTURE OF THE ARRAY
+
+[
+[x, o, o],
+[o, x, o],
+[x, o, x],
+]
+*/
 
 // https://stackoverflow.com/questions/14832603/check-if-all-values-of-array-are-equal
 const allEqual = arr =>
